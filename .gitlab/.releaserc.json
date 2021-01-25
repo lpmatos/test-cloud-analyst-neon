@@ -49,8 +49,8 @@
     ["@semantic-release/exec", {
       "verifyReleaseCmd": "echo ${nextRelease.version} > VERSION"
     }],
-    ["@semantic-release/github", {
-      "addReleases": "top"
+    ["@semantic-release/gitlab", {
+      "gitlabUrl": "https://gitlab.com"
     }],
     ["@semantic-release/changelog", {
       "changelogFile": "CHANGELOG.md",
