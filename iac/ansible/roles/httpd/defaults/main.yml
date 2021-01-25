@@ -1,0 +1,6 @@
+---
+user: "ec2-user"
+http_host: "recruitlab.local"
+http_conf: "recruitlab.local.conf"
+http_port: "80"
+team: "Time Cloud Neon"

@@ -1,0 +1,63 @@
+{
+  "variables": {
+      "ami_base": "ami-0f5761c546ea1265a",
+      "ami_description": "Neon Labs - AMI Windows Server Base - 2019 Datacenter edition",
+
+      "os": "Windows Server Base",
+      "os_release": "Datacenter edition 2019",
+      "os_package_manager": "none",
+
+      "winrm_username": "Administrator",
+      "image_version" : "1.0.0"
+  },
+  "builders":[
+    {
+      "type": "amazon-ebs",
+
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "{{user `aws_region`}}",
+
+      "instance_type": "{{user `ami_type`}}",
+
+      "force_deregister": true,
+      "force_delete_snapshot": true,
+
+      "communicator": "winrm",
+      "winrm_username": "{{user `winrm_username`}}",
+
+      "encrypt_boot": false,
+
+      "associate_public_ip_address": true,
+      "vpc_id": "{{user `vpc_id`}}",
+      "subnet_id": "{{user `subnet_id`}}",
+
+      "ami_name": "ami-apache-{{user `image_version`}}",
+      "ami_description": "{{user `ami_description`}}",
+      "source_ami": "ami-096fda3c22c1c990a",
+
+      "tags":{
+        "Alias": "ami-apache-{{user `image_version`}}",
+        "System": "{{user `os`}}",
+        "System_Version": "{{user `os_release`}}",
+        "System_Package_Maneger": "{{user `os_package_manager`}}",
+        "Maintaner": "{{user `maintaner`}}",
+        "Environment": "{{user `environment`}}",
+        "ManagedBy"  : "Packer",
+        "Description": "{{user `ami_description`}}",
+        "Version": "{{user `image_version`}}"
+      }
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "powershell",
+      "script": "./src/bootstrap.ps1"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "manifest"
+    }
+  ]
+}

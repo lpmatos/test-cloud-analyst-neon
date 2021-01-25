@@ -1,0 +1,7 @@
+<VirtualHost *:{{ http_port }}>
+    ServerName www.{{ http_host }}
+    ServerAlias {{ http_host }}
+    DocumentRoot /var/www/{{ http_host }}/html
+    ErrorLog /var/www/{{ http_host }}/log/error.log
+    CustomLog /var/www/{{ http_host }}/log/requests.log combined
+</VirtualHost>

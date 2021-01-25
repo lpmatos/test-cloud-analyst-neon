@@ -1,7 +1,8 @@
 ---
--
+- name: Show a simples message and install Apache
   hosts: all
   become: true
-  tasks:
-    - name: Say Hello
-      command: echo "Hello World!"
+
+  roles:
+    - default
+    - httpd

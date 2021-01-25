@@ -1,0 +1,17 @@
+- name: Install the latest version of Apache
+  yum:
+    name: httpd
+    state: latest
+
+- name: Create document root
+  file:
+    path: "/var/www/{{ http_host }}"
+    state: directory
+    owner: apache
+    group: apache
+    mode: 0755
+
+- name: Copy index page
+  template:
+    src: "index.html.j2"
+    dest: "/var/www/{{ http_host }}/index.html"

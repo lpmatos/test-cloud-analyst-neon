@@ -4,11 +4,11 @@
       "ami_description": "Neon Labs - AMI Red Hat Enterprise Linux 8",
 
       "os": "RHEL",
-      "os_release": "RHEL 8",
+      "os_release": "8",
       "os_package_manager": "yum",
 
       "ssh_username": "ec2-user",
-      "image_version" : "0.0.2"
+      "image_version" : "1.0.0"
   },
   "builders":[
     {
@@ -34,13 +34,15 @@
       "source_ami": "ami-096fda3c22c1c990a",
 
       "tags":{
-        "Name": "ami-apache-{{user `image_version`}}",
-        "Os": "{{user `os`}}",
-        "OS_Version": "{{user `os_release`}}",
+        "Alias": "ami-apache-{{user `image_version`}}",
+        "System": "{{user `os`}}",
+        "System_Version": "{{user `os_release`}}",
+        "System_Package_Maneger": "{{user `os_package_manager`}}",
         "Maintaner": "{{user `maintaner`}}",
-        "Environment": "{{user `labs`}}",
+        "Environment": "{{user `environment`}}",
         "ManagedBy"  : "Packer",
-        "Description": "{{user `ami_description`}}"
+        "Description": "{{user `ami_description`}}",
+        "Version": "{{user `image_version`}}"
       }
     }
   ],
@@ -55,7 +57,11 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "../ansible/playbook.yml"
+      "playbook_file": "../ansible/playbook.yml",
+      "role_paths": [
+        "../ansible/roles/default",
+        "../ansible/roles/httpd"
+      ]
     }
   ]
 }

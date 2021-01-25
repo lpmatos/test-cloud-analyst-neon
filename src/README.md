@@ -3,13 +3,13 @@
 ### Desregister an AMIs
 
 ```
-aws ec2 deregister-image --image-id ami-0d1e3214a1af89a32
+aws ec2 deregister-image --image-id ami-024972969046a9190, ami-0e75cfd425d603e60
 ```
 
 ### Terminate Instances 
 
 ```bash
-aws ec2 terminate-instances --instance-ids i-00960df601dec2aed
+aws ec2 terminate-instances --instance-ids i-0878b0416b2562bba
 ```
 
 ## ➤ Show your support
