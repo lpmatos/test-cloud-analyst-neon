@@ -1,0 +1,132 @@
+{
+    "Vpcs": [
+        {
+            "CidrBlock": "10.0.0.0/16",
+            "DhcpOptionsId": "dopt-742d3f0f",
+            "State": "available",
+            "VpcId": "vpc-0ed406c0b66beccd3",
+            "OwnerId": "655743737011",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-03b48faa65e033f1e",
+                    "CidrBlock": "10.0.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "Network",
+                    "Value": "Public"
+                },
+                {
+                    "Key": "Application",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-id",
+                    "Value": "arn:aws:cloudformation:us-east-1:655743737011:stack/aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J/b5da6bb0-356d-11eb-bc03-0e00cd5253c1"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-name",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                },
+                {
+                    "Key": "AppName",
+                    "Value": "aws-perspective-655743737011"
+                },
+                {
+                    "Key": "aws:cloudformation:logical-id",
+                    "Value": "VPC"
+                }
+            ]
+        },
+        {
+            "CidrBlock": "192.168.0.0/16",
+            "DhcpOptionsId": "dopt-742d3f0f",
+            "State": "available",
+            "VpcId": "vpc-08935cbe385691666",
+            "OwnerId": "655743737011",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-0d5849483929c66d0",
+                    "CidrBlock": "192.168.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "aws:cloudformation:stack-id",
+                    "Value": "arn:aws:cloudformation:us-east-1:655743737011:stack/EKS-Cluster-Management/d7baaf70-2f4f-11eb-a18a-0a4789a43cff"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "EKS-Cluster-Management-VPC"
+                },
+                {
+                    "Key": "aws:cloudformation:logical-id",
+                    "Value": "VPC"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-name",
+                    "Value": "EKS-Cluster-Management"
+                }
+            ]
+        },
+        {
+            "CidrBlock": "10.0.0.0/16",
+            "DhcpOptionsId": "dopt-742d3f0f",
+            "State": "available",
+            "VpcId": "vpc-01bfbf1402ee5a4c8",
+            "OwnerId": "655743737011",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-0988067e5edbe5f06",
+                    "CidrBlock": "10.0.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "VPC Entrevistados"
+                }
+            ]
+        },
+        {
+            "CidrBlock": "10.0.0.0/16",
+            "DhcpOptionsId": "dopt-742d3f0f",
+            "State": "available",
+            "VpcId": "vpc-065c3cb9c10c00d6a",
+            "OwnerId": "655743737011",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-0b148248172913d77",
+                    "CidrBlock": "10.0.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "VPC-Arquitetura"
+                }
+            ]
+        }
+    ]
+}

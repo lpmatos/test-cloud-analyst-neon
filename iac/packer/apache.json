@@ -1,0 +1,61 @@
+{
+  "variables": {
+      "ami_base": "ami-096fda3c22c1c990a",
+      "ami_description": "Neon Labs - AMI Red Hat Enterprise Linux 8",
+
+      "os": "RHEL",
+      "os_release": "RHEL 8",
+      "os_package_manager": "yum",
+
+      "ssh_username": "ec2-user",
+      "image_version" : "0.0.2"
+  },
+  "builders":[
+    {
+      "type": "amazon-ebs",
+
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "{{user `aws_region`}}",
+
+      "instance_type": "{{user `ami_type`}}",
+
+      "force_deregister": true,
+      "force_delete_snapshot": true,
+
+      "ssh_username": "{{user `ssh_username`}}",
+
+      "associate_public_ip_address": true,
+      "vpc_id": "{{user `vpc_id`}}",
+      "subnet_id": "{{user `subnet_id`}}",
+
+      "ami_name": "ami-apache-{{user `image_version`}}",
+      "ami_description": "{{user `ami_description`}}",
+      "source_ami": "ami-096fda3c22c1c990a",
+
+      "tags":{
+        "Name": "ami-apache-{{user `image_version`}}",
+        "Os": "{{user `os`}}",
+        "OS_Version": "{{user `os_release`}}",
+        "Maintaner": "{{user `maintaner`}}",
+        "Environment": "{{user `labs`}}",
+        "ManagedBy"  : "Packer",
+        "Description": "{{user `ami_description`}}"
+      }
+    }
+  ],
+  "provisioners":[
+    {
+      "type": "shell",
+      "inline": "while [ ! -f /var/lib/cloud/instance/boot-finished ]; do echo 'Waiting for cloud-init...'; sleep 1; done"
+    },
+    {
+      "type": "shell",
+      "script": "./src/ansible.sh"
+    },
+    {
+      "type": "ansible-local",
+      "playbook_file": "../ansible/playbook.yml"
+    }
+  ]
+}

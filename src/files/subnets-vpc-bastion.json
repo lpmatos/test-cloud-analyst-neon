@@ -1,0 +1,188 @@
+{
+    "Subnets": [
+        {
+            "AvailabilityZone": "us-east-1b",
+            "AvailabilityZoneId": "use1-az2",
+            "AvailableIpAddressCount": 248,
+            "CidrBlock": "10.0.2.0/24",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false,
+            "MapCustomerOwnedIpOnLaunch": false,
+            "State": "available",
+            "SubnetId": "subnet-08b428377c5627f35",
+            "VpcId": "vpc-0ed406c0b66beccd3",
+            "OwnerId": "655743737011",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "aws:cloudformation:stack-id",
+                    "Value": "arn:aws:cloudformation:us-east-1:655743737011:stack/aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J/b5da6bb0-356d-11eb-bc03-0e00cd5253c1"
+                },
+                {
+                    "Key": "aws:cloudformation:logical-id",
+                    "Value": "PublicSubnet1"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-name",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                },
+                {
+                    "Key": "Application",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                },
+                {
+                    "Key": "Network",
+                    "Value": "Public"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "vpc-0ed406c0b66beccd3-public-b"
+                },
+                {
+                    "Key": "AppName",
+                    "Value": "aws-perspective-655743737011"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:655743737011:subnet/subnet-08b428377c5627f35"
+        },
+        {
+            "AvailabilityZone": "us-east-1a",
+            "AvailabilityZoneId": "use1-az1",
+            "AvailableIpAddressCount": 249,
+            "CidrBlock": "10.0.11.0/24",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false,
+            "MapCustomerOwnedIpOnLaunch": false,
+            "State": "available",
+            "SubnetId": "subnet-00f7dc31a84fb6334",
+            "VpcId": "vpc-0ed406c0b66beccd3",
+            "OwnerId": "655743737011",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "vpc-0ed406c0b66beccd3-private-a"
+                },
+                {
+                    "Key": "Network",
+                    "Value": "Private"
+                },
+                {
+                    "Key": "aws:cloudformation:logical-id",
+                    "Value": "PrivateSubnet0"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-name",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                },
+                {
+                    "Key": "AppName",
+                    "Value": "aws-perspective-655743737011"
+                },
+                {
+                    "Key": "Application",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-id",
+                    "Value": "arn:aws:cloudformation:us-east-1:655743737011:stack/aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J/b5da6bb0-356d-11eb-bc03-0e00cd5253c1"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:655743737011:subnet/subnet-00f7dc31a84fb6334"
+        },
+        {
+            "AvailabilityZone": "us-east-1a",
+            "AvailabilityZoneId": "use1-az1",
+            "AvailableIpAddressCount": 248,
+            "CidrBlock": "10.0.1.0/24",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false,
+            "MapCustomerOwnedIpOnLaunch": false,
+            "State": "available",
+            "SubnetId": "subnet-0e34b2d9605067def",
+            "VpcId": "vpc-0ed406c0b66beccd3",
+            "OwnerId": "655743737011",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "aws:cloudformation:stack-name",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                },
+                {
+                    "Key": "AppName",
+                    "Value": "aws-perspective-655743737011"
+                },
+                {
+                    "Key": "Network",
+                    "Value": "Public"
+                },
+                {
+                    "Key": "Application",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-id",
+                    "Value": "arn:aws:cloudformation:us-east-1:655743737011:stack/aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J/b5da6bb0-356d-11eb-bc03-0e00cd5253c1"
+                },
+                {
+                    "Key": "aws:cloudformation:logical-id",
+                    "Value": "PublicSubnet0"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "vpc-0ed406c0b66beccd3-public-a"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:655743737011:subnet/subnet-0e34b2d9605067def"
+        },
+        {
+            "AvailabilityZone": "us-east-1b",
+            "AvailabilityZoneId": "use1-az2",
+            "AvailableIpAddressCount": 249,
+            "CidrBlock": "10.0.12.0/24",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false,
+            "MapCustomerOwnedIpOnLaunch": false,
+            "State": "available",
+            "SubnetId": "subnet-0ec6db49298704dd9",
+            "VpcId": "vpc-0ed406c0b66beccd3",
+            "OwnerId": "655743737011",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "vpc-0ed406c0b66beccd3-private-b"
+                },
+                {
+                    "Key": "Network",
+                    "Value": "Private"
+                },
+                {
+                    "Key": "aws:cloudformation:logical-id",
+                    "Value": "PrivateSubnet1"
+                },
+                {
+                    "Key": "AppName",
+                    "Value": "aws-perspective-655743737011"
+                },
+                {
+                    "Key": "Application",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-id",
+                    "Value": "arn:aws:cloudformation:us-east-1:655743737011:stack/aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J/b5da6bb0-356d-11eb-bc03-0e00cd5253c1"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-name",
+                    "Value": "aws-perspective-655743737011-us-east-1-VpcStack-HGN035SLMF9J"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:655743737011:subnet/subnet-0ec6db49298704dd9"
+        }
+    ]
+}

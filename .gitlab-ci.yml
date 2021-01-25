@@ -1,0 +1,13 @@
+default:
+  tags: [docker]
+
+stages:
+  - 🎉 Prepare
+  - ✔️ Validate
+  - 📦 Build
+  - 🚀 Deploy
+  - 🚨 Destroy
+
+include:
+  - local: ".gitlab/ci/Common.gitlab-ci.yml"
+  - local: ".gitlab/ci/Terraform.gitlab-ci.yml"

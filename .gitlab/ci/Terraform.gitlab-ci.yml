@@ -1,0 +1,84 @@
+variables:
+  TF_ROOT: $CI_PROJECT_DIR/iac/terraform
+
+✨ Init:
+  extends: .terraform
+  stage: 🎉 Prepare
+  script:
+    - cd $TF_ROOT
+    - gitlab-terraform init
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "load-test"'
+      changes:
+        - terraform/*.tf
+        - terraform/chart/*.yaml
+      allow_failure: true
+
+💥 Validate:
+  extends: .terraform
+  stage: ✔️ Validate
+  script:
+    - cd $TF_ROOT
+    - gitlab-terraform validate
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "load-test"'
+      changes:
+        - terraform/*.tf
+        - terraform/chart/*.yaml
+      allow_failure: true
+
+📇 Plan:
+  extends: .terraform
+  stage: 📦 Build
+  script:
+    - cd $TF_ROOT
+    - gitlab-terraform plan
+    - gitlab-terraform plan-json
+  artifacts:
+    paths:
+      - $TF_ROOT/plan.cache
+      - $TF_ROOT/plan.json
+    reports:
+      terraform: $TF_ROOT/plan.json
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "load-test"'
+      changes:
+        - terraform/*.tf
+        - terraform/chart/*.yaml
+      allow_failure: true
+
+⚡ Apply:
+  extends: .terraform
+  stage: 🚀 Deploy
+  environment:
+    name: production
+  script:
+    - cd $TF_ROOT
+    - gitlab-terraform apply
+  dependencies:
+    - 📇 Plan
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "load-test"'
+      changes:
+        - terraform/*.tf
+        - terraform/chart/*.yaml
+      when: manual
+      allow_failure: true
+
+🐧 Clean:
+  extends: .terraform
+  stage: 🚨 Destroy
+  environment:
+    name: production
+  script:
+    - cd $TF_ROOT
+    - terraform destroy -auto-approve
+  dependencies:
+    - ⚡ Apply
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "load-test"'
+      changes:
+        - terraform/*.tf
+        - terraform/chart/*.yaml
+      when: manual
+      allow_failure: true

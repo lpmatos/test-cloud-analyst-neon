@@ -1,0 +1,13 @@
+{
+  "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+  "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+  "aws_region": "{{env `AWS_REGION`}}",
+
+  "ami_type": "t2.micro",
+
+  "vpc_id": "vpc-0ed406c0b66beccd3",
+  "subnet_id": "subnet-08b428377c5627f35",
+
+  "maintaner": "Lucca Pessoa da Silva Matos",
+  "environment": "Labs"
+}
