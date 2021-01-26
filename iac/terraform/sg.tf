@@ -1,14 +1,14 @@
 resource "aws_security_group" "allows_http_ssh" {
   name        = "allows-http-ssh"
   description = "Allow HTTP and SSH inbound traffic"
-  vpc_id      = data.aws_vpc.default_bastion.id
+  vpc_id      = data.aws_vpc.default.id
 
   ingress {
     description = "Web from VPC"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.main.cidr_block]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {

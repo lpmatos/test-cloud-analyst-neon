@@ -52,12 +52,14 @@
   "provisioners": [
     {
       "type": "powershell",
-      "script": "./src/bootstrap.ps1"
-    }
-  ],
-  "post-processors": [
+      "inline": [
+        "Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServerRole",
+        "Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServer"
+      ]
+    },
     {
-      "type": "manifest"
+      "type": "powershell",
+      "script": "./src/bootstrap.ps1"
     }
   ]
 }

@@ -11,3 +11,12 @@ locals {
     aws_region     = try(yamldecode(file(var.values_file))["aws"]["region"], "Exception")
   }
 }
+
+data "aws_ami" "apache" {
+  most_recent = true
+  owners      = ["self"]
+  filter {
+    name   = "name"
+    values = ["ami-apache-*"]
+  }
+}
