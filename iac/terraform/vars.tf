@@ -8,10 +8,10 @@ variable "environment" {
   default     = "Labs"
 }
 
-variable "autor" {
+variable "maintaner" {
   type        = string
   description = "Terraform resource author"
-  default     = "Lucca Pessoa"
+  default     = "Lucca Pessoa da Silva Matos"
 }
 
 variable "values_file" {
@@ -22,4 +22,14 @@ variable "values_file" {
     condition     = length(regexall(".yml", var.values_file)) > 0 || length(regexall(".yaml", var.values_file)) > 0
     error_message = "The values_file value must be a valid YML file."
   }
+}
+
+# ================================================
+# DECLARING VPC VARIABLES
+# ================================================
+
+variable "default_vpc_id" {
+  type        = string
+  description = "Default VPC ID used"
+  default     = "vpc-0ed406c0b66beccd3"
 }
