@@ -23,6 +23,10 @@
   </a>
 </p>
 
+## ➤ Programming Languages
+
+- [🗲 Bash](./src/README.md)
+
 ## ➤ Infra as Code
 
 - [🗲 Ansible](./iac/ansible)
@@ -40,7 +44,7 @@
 
 ## ➤ Versioning
 
-🚨 We currently do not have a [**CHANGELOG.md**](CHANGELOG.md) generated 🚨
+[**CHANGELOG.md**](CHANGELOG.md)
 
 ## ➤ Author
 
